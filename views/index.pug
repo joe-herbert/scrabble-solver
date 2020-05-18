@@ -1,0 +1,24 @@
+doctype html
+html
+    head
+        title= title
+        link(rel='stylesheet', href='/css/index.css')
+        script(src='/js/index.js')
+    body
+        h1 Scrabble Solver
+        p Enter the layout of the board below and your tiles underneath.
+        table
+            for r in boardLayout
+                tr
+                    for d in r
+                        td(class=d, contenteditable)
+        table.tiles
+            tr
+                td(contenteditable)
+                td(contenteditable)
+                td(contenteditable)
+                td(contenteditable)
+                td(contenteditable)
+                td(contenteditable)
+                td(contenteditable)
+        button Find Words
