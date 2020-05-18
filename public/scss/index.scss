@@ -1,0 +1,104 @@
+html, body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    min-width: 520px;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+td {
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+    border: 1px solid #000;
+    background-color: #fdf2e3;
+    font-size: 12px;
+    text-align: center;
+    text-transform: capitalize;
+
+    &.tw {
+        color: white;
+        background-color: #f96161;
+
+        &::before {
+            content: "TW";
+        }
+    }
+
+    &.dw {
+        background-color: pink;
+
+        &::before {
+            content: "DW";
+        }
+    }
+
+    &.tl {
+        color: white;
+        background-color: #3668fd;
+
+        &::before {
+            content: "TL";
+        }
+    }
+
+    &.dl {
+        background-color: lightblue;
+
+        &::before {
+            content: "DL";
+        }
+    }
+
+    &.c {
+        background-color: pink;
+
+        &::before {
+            content: "\2605";
+            position: relative;
+            top: -2px;
+            font-size: 22px;
+        }
+    }
+}
+
+.tiles {
+    margin-top: 40px;
+
+    td {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+    }
+}
+
+button {
+    display: block;
+    padding: 5px 20px;
+    border: none;
+    box-shadow: 0 0 15px -10px black;
+    color: white;
+    background-color: #1e1e1e;
+    font-size: 18px;
+    text-transform: uppercase;
+    line-height: 40px;
+    transition: background-color 0.4s, transform 0.4s;
+    cursor: pointer;
+    letter-spacing: 2px;
+    display: inline-block;
+    margin-top: 40px;
+
+    &:hover {
+        background-color: black;
+    }
+
+    &:active {
+        transform: scale(0.95);
+    }
+}
