@@ -5,20 +5,25 @@ html
         link(rel='stylesheet', href='/css/index.css')
         script(src='/js/index.js')
     body
-        h1 Scrabble Solver
-        p Enter the layout of the board below and your tiles underneath.
-        table
-            for r in boardLayout
+        .main
+            h1 Scrabble Solver
+            p Enter the layout of the board below and your tiles underneath.
+            table#board
+                - let i = 0;
+                for r in boardLayout
+                    tr
+                        for d in r
+                            td(class=d)
+                                if d == "c"
+                                    - d = "&#9733;";
+                                input(type="text", maxlength="1", placeholder!=d, id="boardTile" + i++, onkeydown="boardTileKeyDown(event)", onkeyup="boardTileKeyUp(this)")
+            table#rack
                 tr
-                    for d in r
-                        td(class=d, contenteditable)
-        table.tiles
-            tr
-                td(contenteditable)
-                td(contenteditable)
-                td(contenteditable)
-                td(contenteditable)
-                td(contenteditable)
-                td(contenteditable)
-                td(contenteditable)
-        button Find Words
+                    - var n = 0;
+                    while n < 7
+                        td
+                            input(type="text", maxlength="1", id="rackTile" + n++, onkeydown="rackTileKeyDown(event)")
+            button(onclick="findWords()")#findWords Find Words
+            br
+            button(onclick="clearTable('board')") Clear Board
+            button(onclick="clearTable('rack')") Clear Rack
